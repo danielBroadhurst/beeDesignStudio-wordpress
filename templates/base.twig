@@ -1,0 +1,89 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+{% block head %}
+{% endblock %}
+</head>
+{% endblock %}
+
+<body class="{{body_class}}" data-template="base.twig">
+    <header class="header">
+        {% block header %}
+        <header class="sidebar">
+            <div class="mobile">
+                <a href="/"><img src="https://beedesignstudio.co.uk/wp-content/uploads/2019/02/logo-full.png"></a>
+                <p>{{site.description}}</p>
+                <p>It is located in the North West in Bolton. We offer Website Design, SEO &amp; Social Media Marketing for small to medium businesses.</p>
+                <p class="services">
+                    <a href="https://beedesignstudio.co.uk/about/">About</a>
+                    <a href="https://beedesignstudio.co.uk/blog/">Blog</a>
+                    <a href="https://beedesignstudio.co.uk/portfolio/">Portfolio</a>
+                    <a href="https://beedesignstudio.co.uk/contact">Contact</a>
+                </p>
+                <nav class="services">
+                <ul class="nav-main services">
+                    {% for item in menu.items %}
+                    <li class="nav-main-item {{ item.classes|join(' ') }}">
+                        <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+                        {% if item.children %}
+                        <ul class="nav-drop">
+                            {% for child in item.children %}
+                            <li class="nav-drop-item">
+                                <a href="{{ child.link }}">{{ child.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                </nav>
+            </div>
+            
+            <div class="mAuto">
+                <input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked onclick="nightModeOff()">
+                <label for="toggle-on" class="btn">Light</label>
+                <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio" onclick="nightModeOn()">
+                <label for="toggle-off" class="btn">Dark</label>
+            </div>
+            
+            <div class="sidebar-social">
+                <ul>
+                    <li><a href="tel:07877335841" title="Call Bee Design Studio - Bolton" target="_blank"><i class="fas fa-phone"></i></a></li>
+                    <li><a href="https://www.facebook.com/beedesignstudio.uk/" aria-label="Facebook | Bee Design Studio - Bolton" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/bee-design-studio-ltd/" aria-label="LinkedIn | Bee Design Studio - Bolton" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/beedesignstudio.uk/" aria-label="Instagram | Bee Design Studio - Bolton" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="mailto:daniel&#64;beedesignstudio.co.uk" aria-label="Email Bee Design Studio - Bolton" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+        </header>
+        {% endblock %}
+    </header>
+    
+    
+
+    <section role="main" class="content">
+        {% if title %}<h1>{{title}}</h1>{% endif %}
+        <div class="wrapper {{sidebar_class}}">
+            {% block content %}
+            Sorry, no content
+            {% endblock %}
+        </div>
+        {% if sidebar %}
+        <aside class="layout-sidebar">
+            {{sidebar}}
+        </aside>
+        {% endif %}
+    </section>
+
+    {% block footer %}
+    <footer class="content" id="footer">
+        {% include 'footer.twig' %}
+    </footer>
+    {{ function('wp_footer') }}
+    {% endblock %}
+
+    <script src="{{ site.theme.link }}/bds.js"></script>
+</body>
+
+</html>

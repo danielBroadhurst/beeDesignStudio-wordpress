@@ -1,0 +1,923 @@
+/*
+ * Theme Name: Bee Design Studio
+ * Description: Starter Theme to use with Timber
+ * Author: Daniel Broadhurst!
+*/
+
+body {
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    background-color: #e2e2e2;
+    font-family: 'Noto Sans HK', sans-serif;
+    transition: background 600ms ease, color 600ms ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.7em;
+}
+
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+   }
+
+.center {
+    text-align: center
+}
+
+.flex-center {
+	display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+/* Sidebar Layout */
+.sidebar {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 30px;
+    padding-right: 0
+}
+
+.sidebar p {
+	font-size: 0.95em;
+    margin-top: 1em;
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    animation: none;
+}
+
+.sidebar img {
+    max-width: 100%;
+}
+
+.services {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+}
+
+.sidebar-social {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1em;
+    margin-bottom: -1em;
+}
+
+.sidebar-social ul {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar-social li {
+    font-size: 1.5em;
+}
+
+.sidebar .services a::after {
+    content: " \2039" "\2014";
+}
+
+.sidebar-social li:not(:first-child) {
+    margin-left: 20px
+}
+
+.sidebar-social a {
+    color: rgba(0, 0, 0, .3);
+}
+
+.sidebar-social a:hover {
+    color: rgba(0, 0, 0, .5);
+}
+
+header.sidebar > div {
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.mobile ul li {
+    font-size: .95em;
+}
+
+/* Content Layout */
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content {
+    box-sizing: border-box;
+    width: calc(100vw - 240px);
+    max-width: 1220px;
+    padding: 40px;
+    margin-left: 240px;
+}
+
+.blank-card {
+    font-size: 1.2em;
+    padding: 30px;
+    margin-bottom: 40px;
+	border: 1px solid;
+    border-radius: 5px;
+}
+
+.blank-card ul {
+    list-style: circle;
+    padding-left: 1em;
+    font-size: 1.3em;
+    padding: 20px;
+}
+
+.card {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    overflow: hidden;
+    box-sizing: border-box;
+    min-height: calc(100vh - 40px * 3);
+    margin-bottom: 40px;
+    border-radius: 4px;
+    background-color: rgba(0, 188, 212, 0.9);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    transition: background-color .33s cubic-bezier(.19, 1, .22, 1);
+    -webkit-animation: fade-in 1s ease-out;
+    -moz-animation: fade-in 1s ease-out;
+    -ms-animation: fade-in 1s ease-out;
+    animation: fade-in 1s ease-out;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+
+.card .card-header {
+    width: 300px;
+    -webkit-flex-shrink: 0;
+    -moz-flex-shrink: 0;
+    -ms-flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+.card .card-header.home {
+    background: #fff;
+}
+
+#the-hub-westhoughton .card-header,
+.card .card-header.reverse {
+    position: relative;
+    left: calc(100% - 300px);
+}
+
+#the-hub-westhoughton picture {
+position: relative;
+    left: -300px;
+}
+
+.card .card-header,
+.card figure {
+    box-sizing: border-box;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-small {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flex;
+    display: inline-flex;
+    width: calc(50% - 20px);
+    min-height: 600px;
+}
+
+.card-small img {
+    margin-top: 2em;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.card-small-long {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flex;
+    display: inline-flex;
+    width: calc(100% - 0px);
+    min-height: 600px;
+}
+
+.card-small + .card-small {
+    margin-left: 30px;
+}
+
+.tick-list {
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-small .card-header {
+    width: 100%;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+    color: #000;
+}
+
+.card-header p {
+    font-size: .9em;
+}
+
+/* Card Colours & Images */
+
+.card-small:nth-of-type(odd) img {
+    background: #E55D87;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(45deg, #5FC3E4, #E55D87);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(45deg, #5FC3E4, #E55D87);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-small:nth-of-type(even) img {
+    background: #4CB8C4;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(45deg, #3CD3AD, #4CB8C4);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(45deg, #3CD3AD, #4CB8C4);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#the-hub-westhoughton picture img {
+    object-position: left;
+}
+
+#social-media .card-header {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+#website-design .card-header {
+    background-color: rgba(252, 88, 86, 0.95);
+}
+
+#seo-services .card-header {
+    background-color: rgba(60, 211, 173, 0.9);
+}
+
+#ppc-marketing .card-header {
+    background-color: rgba(253, 225, 54, 0.95);
+}
+
+#social-media-marketing .card-header {
+    background-color: rgba(95, 195, 228, 0.95);
+}
+
+#contact .card-header {
+    background-color: rgba(0, 150, 136, 0.95);
+}
+
+#html-css-mega-menu .card-header {
+    background-color: rgb(44, 4, 38, 0.95);
+}
+
+#html-css-mega-menu .card-header a {
+    color: #fff;
+}
+
+#html-css-mega-menu {
+    background-image: url("https://beedesignstudio.co.uk/wp-content/uploads/2019/07/Screenshot-2019-07-09-at-13.23.46-1024x547.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	color: white;
+}
+
+#daniel-broadhurst {
+    background-image: url("/wp-content/uploads/2019/03/dj-daniel-broadhurst-x2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	color: white;
+}
+
+#daniel-broadhurst a {
+	color: white;
+}
+
+#dj-broadhurst-about {
+    background-image: url("/wp-content/uploads/2019/03/dj-daniel-broadhurst-x2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#dj-broadhurst-about .card-header {
+    background-color: rgba(48, 139, 201, 0.95);
+}
+
+#dj-broadhurst {
+    background-image: url("https://beedesignstudio.co.uk/wp-content/uploads/2019/03/dj-broadhurst.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#dj-broadhurst .card-header {
+    background-color: rgba(255, 61, 92, 0.95);
+}
+
+#dogs {
+    background-image: url("/wp-content/uploads/2019/03/dogs-x2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#dogs .card-header {
+    background-color: rgba(252, 88, 86, 0.95);
+    position: relative;
+    bottom: -350px;
+    width: 100%;
+    height: 250px;
+}
+
+#dogs .card-header p {
+    margin-bottom: 0.5em;
+}
+
+#contact-card .card-header {
+    background-color: rgba(252, 88, 86, 0.95);
+}
+
+/* Portfolio */
+
+#the-hub-westhoughton {
+    background-image: url("/wp-content/uploads/2019/03/the-hub-home-x2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#how-we-work .card-header,
+#the-hub-westhoughton .card-header {
+    background-color: rgba(255, 213, 0, .9);
+}
+
+#how-we-work,
+#wave-adventure {
+    background-image: url("/wp-content/uploads/2019/03/wave-adventure-home-x2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#wave-adventure .card-header {
+    background-color: rgba(53, 181, 213, .9);
+}
+
+#movie-club-nights {
+    background-image: url("/wp-content/uploads/2019/02/movie-clubnight-x2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#movie-club-nights .card-header {
+    background: #e408e8;
+    background: -webkit-linear-gradient(-45deg, rgba(228, 8, 232, .9), rgba(11, 167, 246, 1));
+    background: linear-gradient(-45deg, rgba(228, 8, 232, .9), rgba(11, 167, 246, 1));
+}
+
+#wa-events-logo {
+    background: #4ECDC4;
+    background: -webkit-linear-gradient(-35deg, #556270, #4ECDC4);
+    background: linear-gradient(-35deg, #556270, #4ECDC4);
+}
+
+#wa-events-posters {
+    background: #FFB75E;
+    background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);
+    background: linear-gradient(to right, #ED8F03, #FFB75E);
+}
+
+#foodblogs-co-uk {
+    background-image: url("/img/portfolio/food-blogs-x1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#foodblogs-co-uk .card-header {
+    background: rgba(220, 36, 48, .8);
+    background: -webkit-linear-gradient(to right, rgba(220, 36, 48, .8), rgba(123, 67, 151, .8));
+    background: linear-gradient(to right, rgba(220, 36, 48, .8), rgba(123, 67, 151, .8));
+    ;
+}
+
+#simple-search-online {
+    background-image: url("/wp-content/uploads/2019/03/simplesesrchonline-x2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#simple-search-online .card-header {
+    background-color: rgba(40, 184, 142);
+}
+
+#s-s-aerials-ltd {
+    background-image: url("https://beedesignstudio.co.uk/wp-content/uploads/2019/06/ss-aerials-manchester-website-design.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#s-s-aerials-ltd .card-header {
+    background-color: rgba(222, 187, 148, 1);
+}
+
+.featured-image img {
+    max-width: 900px;
+}
+
+/* Pages */
+
+.blank-card figure {
+    max-width: 100%;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+}
+
+.blank-card figure img {
+    width: 100%;
+}
+
+#footer .blank-card,
+article {
+    padding-left: 30px;
+    max-width: 700px;
+    margin-bottom: 0px;
+    padding-bottom: 15px;
+	border: none;
+}
+
+article img {
+    max-width: 100%;
+}
+
+blockquote {
+    background: rgba(31, 120, 176, .4);
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+.wpcf7-form-control {
+    display: block;
+    width: calc(100% - 30px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+/* Footer */
+
+
+
+/* Typography */
+blockquote,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul {
+    font-family: 'Noto Sans HK', sans-serif;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 2.5em;
+    -webkit-animation: fade-in 2s ease-out;
+    -moz-animation: fade-in 2s ease-out;
+    -ms-animation: fade-in 2s ease-out;
+    animation: fade-in 2s ease-out;
+}
+
+a {
+    color: rgba(0, 0, 0, .9);
+    text-decoration-color: rgba(0, 0, 0, .3);
+}
+
+li {
+    font-size: 0.8em;
+}
+
+.main li {
+    font-size: 1em;
+}
+
+.card-icons {
+    font-size: 3em;
+}
+
+.elsie {
+    color: grey;
+    font-size: 5em;
+}
+
+.shorty {
+    color: saddlebrown;
+    font-size: 3em;
+}
+
+.rex {
+    color: black;
+    font-size: 2.75em;
+}
+
+/* Buttons */
+.wpcf7-submit {
+    width: 100%;
+    margin-top: 1em;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Noto Sans HK', sans-serif;
+    font-size: 1.3em
+}
+
+.btn-bee {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+/* Night-Mode */
+
+.btn {
+    border: 3px solid #1a1a1a;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    transition: background 600ms ease, color 600ms ease;
+}
+
+input[type="radio"].toggle {
+    display: none;
+}
+
+input[type="radio"].toggle + label {
+    cursor: pointer;
+    min-width: 60px;
+}
+
+input[type="radio"].toggle + label:hover {
+    background: none;
+    color: #1a1a1a;
+}
+
+input[type="radio"].toggle + label:after {
+    background: #1a1a1a;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+    width: 100%;
+    z-index: -1;
+}
+
+input[type="radio"].toggle.toggle-left + label {
+    border-right: 0;
+}
+
+input[type="radio"].toggle.toggle-left + label:after {
+    left: 100%;
+}
+
+input[type="radio"].toggle.toggle-right + label {
+    margin-left: -10px;
+}
+
+input[type="radio"].toggle.toggle-right + label:after {
+    left: -100%;
+}
+
+input[type="radio"].toggle:checked + label {
+    cursor: default;
+    color: #fff;
+    transition: color 200ms;
+}
+
+input[type="radio"].toggle:checked + label:after {
+    left: 0;
+}
+
+.night-mode {
+    background-color: #132733;
+    color: #FFF;
+    transition: background 600ms ease, color 600ms ease;
+}
+
+.night-mode .card .card-header {
+    background: #2c72a7;
+    transition: background 200ms ease;
+}
+
+.night-mode .card .card-header.home {
+    background: #fff;
+}
+
+.night-mode #daniel-broadhurst .card-header {
+    background-color: transparent;
+}
+
+.night-mode .card-header a,
+.night-mode .blank-card a,
+.night-mode .sidebar a {
+    color: #FFF;
+    transition: color 600ms ease;
+}
+
+.card-header a,
+.blank-card a,
+.sidebar a {
+    transition: color 600ms ease;
+}
+
+.night-mode #the-hub-westhoughton,
+.night-mode #the-hub-westhoughton h2,
+.night-mode #the-hub-westhoughton p a,
+.night-mode .card-small .card-header a h2,
+.night-mode #social-media h2,
+.night-mode #social-media ul,
+.night-mode #social-media p,
+.night-mode #social-media a {
+    color: #000;
+    transition: color 600ms ease;
+}
+
+#the-hub-westhoughton,
+#the-hub-westhoughton h2,
+#the-hub-westhoughton p a,
+.card-small .card-header a h2,
+#social-media h2,
+#social-media ul,
+#social-media p,
+#social-media a {
+    color: #000;
+    transition: color 600ms ease;
+}
+
+/* Animations */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(5px) scale(.95);
+        -moz-transform: translateY(5px) scale(.95);
+        -ms-transform: translateY(5px) scale(.95);
+        transform: translateY(5px) scale(.95)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        transform: none
+    }
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 1200px) {
+
+    /* Extra large devices (large laptops and desktops, 1200px and below) */
+    .sidebar {
+        width: 240px;
+    }
+
+}
+
+@media only screen and (max-width: 992px) {
+    /* Large devices (laptops/desktops, 992px and below) */
+
+    .sidebar {
+        position: relative;
+        width: 100vw;
+        padding-right: 30px;
+    }
+
+    .sidebar img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .content {
+        width: calc(100% - 10px);
+        margin-left: 0px;
+    }
+
+    .card-small {
+        width: 100%;
+    }
+
+    .card-small + .card-small {
+        margin-left: 0px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* Medium devices (landscape tablets, 768px and below) */
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    /* Small devices (portrait tablets and large phones, 600px and below) */
+    .sidebar {
+        padding: 20px;
+    }
+
+    .sidebar p {
+        margin-top: 0em;
+        margin-bottom: 1.5em;
+    }
+
+    .services {
+        margin-top: 0;
+    }
+
+    .mobile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .mobile ul li {
+        text-align: end;
+    }
+
+    nav > ul > li,
+    .services a {
+        margin-top: 1em;
+    }
+
+    .mAuto {
+        margin: auto;
+    }
+
+    #mobile-off {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .card {
+        display: block;
+        width: 100%;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .card .card-header {
+        min-height:inherit;
+        width: 100%;
+    }
+
+    #the-hub-westhoughton .card-header,
+    .card .card-header.reverse {
+        left: calc(0% - 0px);
+    }
+
+    #daniel-broadhurst .card-header {
+        background-color: rgba(248, 0, 106, .8);
+    }
+
+    #dogs .card-header {
+        height: auto;
+        bottom: auto;
+    }
+
+    #footer .blank-card, 
+    article {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+
+    .content {
+        width: calc(100vw - 320px);
+        margin-left: 320px;
+    }
+
+    #dj-broadhurst-about {
+        background-image: url("/wp-content/uploads/2019/03/dj-daniel-broadhurst-x2.jpg");
+    }
+
+    #daniel-broadhurst {
+        background-image: url("/wp-content/uploads/2019/03/daniel-broadhurst-x2.jpg");
+    }
+
+    #dogs {
+        background-image: url("/wp-content/uploads/2019/03/dogs-x2.jpg");
+    }
+
+    #the-hub-westhoughton {
+        background-image: url("/wp-content/uploads/2019/03/the-hub-home-x2.jpg");
+    }
+
+    #wave-adventure {
+        background-image: url("/wp-content/uploads/2019/03/wave-adventure-home-x2.jpg");
+    }
+
+    #movie-club-nights {
+        background-image: url("/wp-content/uploads/2019/02/movie-clubnight-x2.jpg");
+    }
+
+    #simple-search-online {
+        background-image: url("/wp-content/uploads/2019/03/simplesesrchonline-x2.jpg");
+    }
+
+    #foodblogs-co-uk {
+        background-image: url("/img/portfolio/food-blogs-x2.png");
+    }
+
+}
+
+@media (min-width: 1750px) {
+
+    .sidebar {
+        left: calc(50% - 890px);
+    }
+
+    .content {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

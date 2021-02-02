@@ -1,0 +1,32 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="card card-small-long" id="{{post.slug}}">
+        <div class="card-header">
+            <div>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.card_excerpt }}</p>
+            </div>
+            <div>
+                {{post.card_list}}
+            </div>
+        </div>
+        <picture>
+            <img src="{{post.thumbnail}}" alt="{{post.thumbnail.alt}}">
+        </picture>
+    </div>
+    <div class="main">
+        <article class="">
+            <div class="">
+                {{post.content}}
+            </div>
+        </article>
+        <aside id="home_right_1">
+            {{ home_right }}
+        </aside>
+    </div>
+
+
+
+{% endblock %}

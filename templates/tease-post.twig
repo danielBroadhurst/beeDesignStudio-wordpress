@@ -1,0 +1,15 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
+<p>{{post.preview.length(35)}}</p>
+<p>
+    {% for term in post.terms('tags') %}
+    <a href="{{ term.path }}">{{ term.name }}</a>
+    {% endfor %}
+    <div>
+       {{post.cardList}}
+       <p>URL: <a href="{{post.external_url}}" target="_blank">{{post.title}}</a></p>
+    </div>
+</p>
+{% endblock %}

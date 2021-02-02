@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <section class="article-content">
+        <div class="card card-small-long" id="{{ post.slug }}">
+            <div class="card-header">
+                <div>
+                    <h1>{{post.title}}</h1>
+                    <p><strong>About the Project:</strong>
+                        {% for term in post.terms('tags') %}
+                        {{term.name}}.
+                        {% endfor %}</p>
+                    <p>{{post.preview}}</p>
+                </div>
+                <div>
+                    {{post.cardList}}
+                    <p>URL: <a href="{{post.external_url}}" target="_blank">{{post.title}}</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <article class="post-type-{{ post.post_type }}">
+        <h1 class="article-h1">{{ post.title }}</h1>
+        <div class="article-body">
+            {{post.content}}
+        </div>
+    </article>
+{% endblock %}
